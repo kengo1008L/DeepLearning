@@ -1,0 +1,263 @@
+# coding: UTF-8
+
+#msg = "first"
+#print msg
+
+print 10 * 5
+print 10 // 3 # 商
+print 10 % 3
+print 2 ** 3 # 8
+
+print 5 + 2.0
+
+print 10 / 3
+print 10 / 3.0
+
+# 日本語 u"こんにちは"
+
+print "hello" + "world"
+print u"無駄" * 10
+print "hello\n wor\tld"
+
+# """ で囲むと改行省略できる
+print """abc
+123
+あいう"""
+
+s = "abcdefghi"
+print len(s)
+print s.find("a")
+print s[2]
+print s[2:5]
+print s[:5]
+print s[2:]
+print s[2:-1] #逆から
+
+print 5 + int("5")   #10
+print 5 + float("5") #10.0
+
+
+age = 20
+print "i am " + str(age) + " years old"
+
+#リスト
+sales = [255, 100, 353, 400, 'abc']
+# len + * []
+print len(sales) # 5
+print sales[2]
+
+print 100 in sales # true
+
+#range
+print range(10)
+print range(3,10)
+print range(3,10,2)
+
+#sort/reverse
+sales.sort() #昇順
+sales.reverse() #そのまま逆に(降順ではない)
+
+#split
+d = "2014/12/14"
+print d.split("/")
+
+#join
+a = ["a", "b", "c"]
+print "-".join(a)
+
+#タプル(変更ができない)
+a = (2,5,8)
+print len(a)
+#a[2]=10 #error
+
+#タプル<>リスト
+b = list(a)
+print b #[2,5,8]
+c = tuple(b)
+print c #(2,5,8)
+
+#セット(集合型)重複を許さない
+a = set([1,2,3,4,3,2])
+print a
+b = set([3,4,5,6])
+print a - b # 差集合
+print a | b # 和集合
+print a & b # 積集合
+print a ^ b # どちらか片方にしかないもの
+
+# 辞書 key value
+sales = {"taguchi":200, "fkoji":300,"dotinstall":500}
+print sales
+print sales["taguchi"]
+
+# in
+print "taguchi" in sales # true
+
+print sales.keys()
+print sales.values()
+print sales.items()
+
+a = 10
+b = 1.2345
+c = "taguchi"
+d = {"fkoji":200,"dotinstall":500}
+print "age: %d" % a
+print "price: %d" % b
+print "name: %s" % c
+
+print "sales: %(fkoji)d" %d
+print "%d and %f" % (a,b)
+
+# 条件分岐
+score = 70
+if score > 60 and score < 80:
+# if 60 < score < 80
+	print "ok!"
+	print "ok!!"
+elif score > 40:
+	print "elif:else if"
+else:
+	print "ng!"
+
+print "ok" if score > 60 else "ng"
+
+
+# for
+sales = [14,15,16]
+sum = 0
+for sale in sales:
+	sum = sum + sale
+else:
+	print sum
+#elseはforの後に一回だけ行いたいもの
+
+for i in range(10):
+	print i
+
+users = {"taguchi":200, "fkoji":300, "dotinstall":500}
+for key,value in users.iteritems():
+	print "key: %s value:%d" % (key,value)
+
+
+#while
+n = 0 
+while n < 10:
+	print n
+	n += 1
+else:
+	print "end"
+
+#def
+def hello(name,num=3):
+	print "hello %s" % (name * num)
+hello("tom",4)
+hello("steve")
+
+# pass 後から関数の中身を定義したいとき
+def hello2():
+	pass
+
+#リスト <> 関数 map
+def double(x):
+	return x * x
+print map(double, [2,4,5])
+
+#lambda 無名関数
+print map(lambda x:x * x, [2,3,4])
+
+#オブジェクト 変数と関数をまとめたもの
+#クラス　オブジェクトの設計図
+#インスタンス クラスを実体化したもの
+class User(object):
+	def __init__(self,name):
+		self.name = name
+	def greet(self):
+		print "my name is %s" % self.name
+
+bob = User("bob")
+tom = User("tom")
+print bob.name
+print tom.greet()
+
+class SuperUser(User):
+	def shout(self):
+		print "%s is super" % self.name
+
+bob = User("bob")
+tom = SuperUser("tom")
+print tom.greet()
+print tom.shout()
+
+import math
+print math.ceil(4.2)
+#for i in range(4):
+#	print random
+
+from datetime import date
+print date.today()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
